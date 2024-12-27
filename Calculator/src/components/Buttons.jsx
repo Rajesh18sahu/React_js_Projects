@@ -1,4 +1,4 @@
-function Buttons() {
+function Buttons({ handleClick }) {
   const ButtonsName = [
     "C",
     "1",
@@ -15,12 +15,16 @@ function Buttons() {
     "/",
     "9",
     "0",
+    "=",
     ".",
   ];
+
   return (
     <>
       {ButtonsName.map((buttonsName) => (
-        <button className="buttons">{buttonsName}</button>
+        <button onClick={() => handleClick(buttonsName)} className="buttons">
+          {buttonsName}
+        </button>
       ))}
     </>
   );

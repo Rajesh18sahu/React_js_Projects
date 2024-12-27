@@ -1,5 +1,7 @@
-function Display() {
-  return <input className="display" type="textarea" readOnly />;
+function Display({ DisplayValue }) {
+  return (
+    <input className="display" type="textarea" value={DisplayValue} readOnly />
+  );
 }
 
 export default Display;
