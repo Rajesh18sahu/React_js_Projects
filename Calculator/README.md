@@ -1,8 +1,7 @@
-# React + Vite
+# Calculator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+in this react calculator project, I have learnt and implemented/used following concepts-
+1 Props for passing Data from Parent to Child
+2 State for storing data in local components, after re-rendering. for Creating State I used useState Hook.
+3 Map method for mapping and displaying array data
+4 Event Handling and communication from Child component to Parent component is also done with function as props
