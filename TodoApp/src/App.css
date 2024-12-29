@@ -1,0 +1,11 @@
+.todoItemContainer {
+  margin: 20px;
+}
+
+.todoHeading {
+  margin: 20px;
+  font-weight: 500;
+}
+.items {
+  margin: 10px 10px;
+}
