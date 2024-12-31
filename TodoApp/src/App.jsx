@@ -5,24 +5,12 @@ import TodoInput from "./components/TodoInput";
 import TodoItems from "./components/TodoItems";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { TodoItemsContext } from "./store/todoItems-store";
+import WelcomeMessege from "./components/WelcomeMessege";
 
 function App() {
-  const [todoItems, setTodoItems] = useState([
-    {
-      name: "Buy Diary",
-      dueDate: "31-12-2024",
-    },
-    {
-      name: "Buy Pen",
-      dueDate: "31-12-2024",
-    },
-    {
-      name: "Buy Beer",
-      dueDate: "31-12-2024",
-    },
-  ]);
+  const [todoItems, setTodoItems] = useState([]);
 
-  function handleNewItem(name, dueDate) {
+  function addNewItem(name, dueDate) {
     console.log("todo " + name + " date " + dueDate);
     let newItemsAdd = [
       ...todoItems,
@@ -34,19 +22,25 @@ function App() {
     setTodoItems(newItemsAdd);
   }
 
-  function handleDeleteButton(todoItemDelete) {
-    console.log(` ${todoItemDelete} delete button clicked `);
+  function deleteItem(todoItemDelete) {
     let newTodoList = todoItems.filter((item) => item.name !== todoItemDelete);
     setTodoItems(newTodoList);
   }
 
   return (
     <center>
-      <TodoItemsContext.Provider value={todoItems}>
+      <TodoItemsContext.Provider
+        value={{
+          todoItems,
+          addNewItem,
+          deleteItem,
+        }}
+      >
         <TodoHeading />
         <div className="todoItemContainer">
-          <TodoInput handleNewItem={handleNewItem} />
-          <TodoItems handleDeleteButton={handleDeleteButton} />
+          <TodoInput />
+          <WelcomeMessege />
+          <TodoItems />
         </div>
       </TodoItemsContext.Provider>
     </center>

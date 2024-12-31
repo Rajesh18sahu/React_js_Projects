@@ -1,20 +1,24 @@
+import { useContext } from "react";
 import { useRef } from "react";
 import { FiPlusCircle } from "react-icons/fi";
+import { TodoItemsContext } from "../store/todoItems-store";
 
-function TodoInput({ handleNewItem }) {
+function TodoInput() {
   let todoName = useRef(0);
   let dueDate = useRef(0);
+
+  const { addNewItem } = useContext(TodoItemsContext);
 
   function handleAddButtonClick() {
     let todoNameElement = todoName.current.value;
     let dueDateElement = dueDate.current.value;
-    handleNewItem(todoNameElement, dueDateElement);
+    addNewItem(todoNameElement, dueDateElement);
     todoName.current.value = "";
     dueDate.current.value = "";
   }
 
   return (
-    <div className="appContainer">
+    <>
       <div class="row items">
         <div class="col-6">
           <input
@@ -37,7 +41,7 @@ function TodoInput({ handleNewItem }) {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
