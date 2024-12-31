@@ -14,7 +14,7 @@ function TodoInput({ handleNewItem }) {
   }
 
   return (
-    <>
+    <div className="appContainer">
       <div class="row items">
         <div class="col-6">
           <input
@@ -37,7 +37,7 @@ function TodoInput({ handleNewItem }) {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -4,6 +4,7 @@ import TodoHeading from "./components/TodoHeading";
 import TodoInput from "./components/TodoInput";
 import TodoItems from "./components/TodoItems";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { TodoItemsContext } from "./store/todoItems-store";
 
 function App() {
   const [todoItems, setTodoItems] = useState([
@@ -41,14 +42,13 @@ function App() {
 
   return (
     <center>
-      <TodoHeading />
-      <div className="todoItemContainer">
-        <TodoInput handleNewItem={handleNewItem} />
-        <TodoItems
-          todoItems={todoItems}
-          handleDeleteButton={handleDeleteButton}
-        />
-      </div>
+      <TodoItemsContext.Provider value={todoItems}>
+        <TodoHeading />
+        <div className="todoItemContainer">
+          <TodoInput handleNewItem={handleNewItem} />
+          <TodoItems handleDeleteButton={handleDeleteButton} />
+        </div>
+      </TodoItemsContext.Provider>
     </center>
   );
 }

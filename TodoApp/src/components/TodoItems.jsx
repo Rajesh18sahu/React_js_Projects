@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { FiTrash } from "react-icons/fi";
-function TodoItems({ todoItems, handleDeleteButton }) {
+import { TodoItemsContext } from "../store/todoItems-store";
+function TodoItems({ handleDeleteButton }) {
+  const todoItems = useContext(TodoItemsContext);
   return (
     <>
       {todoItems.map((item) => (
