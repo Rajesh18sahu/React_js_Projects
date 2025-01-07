@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import "./App.css";
 import TodoHeading from "./components/TodoHeading";
 import TodoInput from "./components/TodoInput";
@@ -26,6 +26,7 @@ const todoItemsReducer = (currTodoItems, action) => {
 
   return newTodoItems;
 };
+
 function App() {
   //const [todoItems, setTodoItems] = useState([]);
 
